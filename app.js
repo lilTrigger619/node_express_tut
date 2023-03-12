@@ -2,9 +2,18 @@ const express = require("express");
 const StaticData = require("./static/_data.json");
 const expressInstance = express();
 
+/**
+//      MIDDLEWARE FUNCTION
+// middleware function
 function logger(req) {
   console.log("[", req.method, "] : ", req.headers.host + req.url);
 }
+
+expressInstance.use(logger); //use for all routes.
+
+// expressInstance.use("/", logger)  // correct
+// expressInstance.use("/", [logger,])  // correct
+// expressInstance.use(["/"], logger)  // correct
 
 expressInstance.get("/", function (req, res) {
   return res.status(200).json(StaticData);
@@ -27,6 +36,9 @@ expressInstance.get("/user/:userId", function (req, res) {
 expressInstance.listen(8000, function () {
   console.log("Serving on http://localhost:8000");
 });
+ **/
+
+
 
 /**
 //      JSON RESPONSE.
