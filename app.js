@@ -2,6 +2,17 @@ const express = require("express");
 const StaticData = require("./static/_data.json");
 const expressInstance = express();
 
+
+const route = express.Router();
+
+route.route("/").get(function(req, res){}).post(function(req, res){});
+
+expressInstance.use("/", route);
+
+expressInstance.listen(8000);
+
+//route.get("/", )
+
 /**
 //      MIDDLEWARE FUNCTION
 // middleware function
@@ -37,8 +48,6 @@ expressInstance.listen(8000, function () {
   console.log("Serving on http://localhost:8000");
 });
  **/
-
-
 
 /**
 //      JSON RESPONSE.
